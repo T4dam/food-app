@@ -4,16 +4,26 @@ import {Splide, SplideSlide} from '@splidejs/react-splide';
 import '@splidejs/react-splide/css';
 
 const Popular = () => {
-    const [popular, setPapular] = useState([])
+    const [popular, setPopular] = useState([])
 
     useEffect(()=>{
     getPopular()
     }, [])
 
     const getPopular = async () => {
-        const api = await fetch(`https://api.spoonacular.com/recipes/random?apiKey=${process.env.REACT_APP_API_KEY}&number=9`)
-        const data = await api.json();
-        setPapular(data.recipes)
+        const check = localStorage.getItem('popular');
+
+        if (check) {
+            setPopular(JSON.parse(check));
+        } else {
+            const api = await fetch(`https://api.spoonacular.com/recipes/random?apiKey=${process.env.REACT_APP_API_KEY}&number=9`)
+
+            const data = await api.json();
+            localStorage.setItem("popular", JSON.stringify(data.recipes))
+            
+            setPopular(data.recipes)
+        }
+
     }
   return (
     <Wrapper>
@@ -28,9 +38,9 @@ const Popular = () => {
 
         {popular.map(item=>{
             return (
-                <SplideSlide>
+                <SplideSlide key={item.id}>
 
-                <Card key={item.id}>
+                <Card>
                     <p>{item.title}</p>
                     <img src={item.image} alt={item.title} />
                     <Gradient />
@@ -59,6 +69,7 @@ left: 0
 width: 100%;
 height: 100%;
 object-fit: cover;
+
 }
 p {
     position: absolute;
