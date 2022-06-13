@@ -21,7 +21,11 @@ useEffect(()=>{
 },[params.type])
 
   return (
-    <Grid>
+    <Grid
+        initial = {{opacity: 0}}
+        animate={{opacity: 1}}
+        exit = {{opacity: 0}}
+    >
         {cuisine.map(item=>{
             return (
                 <Card key={item.id}>
@@ -37,7 +41,7 @@ useEffect(()=>{
     </Grid>
   )
 }
-const Grid = styled.div`
+const Grid = styled(motion.div)`
 display: grid;
 grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
 grid-gap: 3rem;
