@@ -30,7 +30,7 @@ const Popular = () => {
     <Wrapper>
         <h3>Popular</h3>
         <Splide options={{
-            perPage: 4,
+            perPage: 3,
             arrows: false,
             pagination: false,
             drag: 'free',

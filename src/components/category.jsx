@@ -20,9 +20,9 @@ const Category = () => {
             <GiChopsticks />
             <h4>Thai</h4>
         </SLink >
-        <SLink to={'/cuisine/Japanese'}>
+        <SLink to={'/cuisine/Eastern European'}>
             <GiNoodles />
-            <h4>Japanese</h4>
+            <h4>European</h4>
         </SLink>
     </List>
   )
@@ -57,8 +57,7 @@ svg {
     font-size: 1.5rem;
 }
 &.active{
-    background: linear-gradient(to right, #f27121, #e94057);
-}
+    background-image: linear-gradient(-20deg, #fc6076 0%, #ff9a44 100%);
 `
 
 export default Category
