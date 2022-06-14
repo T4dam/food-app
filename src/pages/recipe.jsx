@@ -15,7 +15,7 @@ const getRecipeDetails = async () => {
 }
 
 useEffect(()=>{
- getRecipeDetails()
+ getRecipeDetails(params.name)
 }, [params.name])
 
   return (

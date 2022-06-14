@@ -1,6 +1,6 @@
 import React from 'react'
 import {FaPizzaSlice, FaHamburger} from 'react-icons/fa';
-import {GiNoodles, GiChopsticks} from 'react-icons/gi';
+import {GiNoodles, GiChopsticks, GiCoolSpices, GiMeat, GiSandwich, GiCakeSlice} from 'react-icons/gi';
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
  
@@ -8,22 +8,34 @@ import { NavLink } from 'react-router-dom';
 const Category = () => {
   return (
     <List>
+        <SLink to={'/cuisine/American'}>
+            <FaHamburger />
+            <h4>American</h4>
+        </SLink>
         <SLink to={'/cuisine/Italian'}>
             <FaPizzaSlice />
             <h4>Italian</h4>
         </SLink>
-        <SLink to={'/cuisine/American'}>
-            <FaHamburger />
-            <h4>American</h4>
+        <SLink to={'/cuisine/European'}>
+            <GiSandwich />
+            <h4>European</h4>
+        </SLink>
+        <SLink to={'/cuisine/Indian'}>
+            <GiCoolSpices />
+            <h4>Indian</h4>
+        </SLink>
+        <SLink to={'/cuisine/African'}>
+            <GiMeat />
+            <h4>African</h4>
+        </SLink>
+        <SLink to={'/cuisine/British'}>
+            <GiCakeSlice />
+            <h4>British</h4>
         </SLink>
         <SLink to={'/cuisine/Thai'}>
             <GiChopsticks />
             <h4>Thai</h4>
         </SLink >
-        <SLink to={'/cuisine/Eastern European'}>
-            <GiNoodles />
-            <h4>European</h4>
-        </SLink>
     </List>
   )
 }
@@ -31,7 +43,8 @@ const Category = () => {
 const List = styled.div`
 display: flex;
 justify-content: center;
-margin: 2rem 0rem;
+margin: 1rem 0rem;
+gap:2rem;
 `
 
 const SLink = styled(NavLink)`
@@ -40,7 +53,7 @@ flex-direction: column;
 justify-content: center;
 align-items:center;
 border-radius: 15%;
-margin-right: 2rem;
+gap: .3rem;
 text-decoration: none;
 background: linear-gradient(35deg, #494949, #313131);
 width: 6rem;

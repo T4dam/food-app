@@ -18,8 +18,9 @@ const Searched = () => {
     },[params.search])
     
   return (
-    <Grid>
-        {searchRecipes.map(item=>{
+    <div>
+        {searchRecipes.length > 0 
+        ?  <Grid>{searchRecipes.map(item=>{
             return (
                 <Card key={item.id}>
                     <Link to={'/recipe/' + item.id}>
@@ -27,10 +28,12 @@ const Searched = () => {
                     <h4>{item.title}</h4>
                     </Link>
                 </Card>
-
             )
         })}
-    </Grid>
+         </Grid>
+        :  <div>No Results have been found</div>
+    }
+    </div>
   )
 }
 const Grid = styled.div`

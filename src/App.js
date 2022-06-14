@@ -11,11 +11,11 @@ function App() {
     <div>
       <BrowserRouter>
       <Nav>
-        <GiForkKnifeSpoon style={{fontSize: '20px',}}/>
+        <GiForkKnifeSpoon style={{fontSize: '1.8rem',}}/>
         <Logo to={"/"}>Foodly</Logo>
       </Nav>
-      <Search />
       <Category />
+      <Search />
     <Pages />
       </BrowserRouter>
     </div>
@@ -23,12 +23,13 @@ function App() {
 }
 const Logo = styled(Link)`
 text-decoration: none;
-font-size: 1.5rem;
+font-size: 2rem;
 font-weigth: 400;
-font-family: 'Lobster Two', cursive;
+font-family: Pacifico, cursive;
 `
 const Nav = styled.div`
-padding: 4rem 0rem;
+padding-top: 4rem;
+padding-bottom: 1.3rem
 `
 
 export default App;
