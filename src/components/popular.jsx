@@ -64,6 +64,8 @@ min-height: 18em;
 border-radius: 2rem;
 overflow: hidden;
 position: relative;
+box-shadow: 2px 4px 8px 0px #363635;
+margin: 11px 0px;
 
 img {
 border-radius: 2rem;
@@ -72,6 +74,7 @@ left: 0
 width: 100%;
 height: 100%;
 object-fit: cover;
+
 
 }
 p {

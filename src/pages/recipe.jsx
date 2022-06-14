@@ -66,11 +66,15 @@ li {
   background: linear-gradient(35deg, #494949, #313131);
   color: white;
 }
+img {
+  border-radius: 4rem;
+  box-shadow: 2px 4px 8px 0px #363635;
+}
 `;
 const Button = styled.button`
 padding: 1rem 2rem;
 color: #313131;
-
+border-radius: 4rem;
 background: white;
 border: 2px solid black;
 margin-right: 2rem;

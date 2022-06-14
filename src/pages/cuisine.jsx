@@ -50,7 +50,7 @@ const Card = styled.div`
         img{
             width: 100%;
             border-radius: 2rem;
-            // border: 7px solid #313131
+            box-shadow: 2px 4px 8px 0px #363635;
         }
         a {
             text-decoration: none;

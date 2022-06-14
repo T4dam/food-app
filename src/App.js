@@ -4,14 +4,14 @@ import { BrowserRouter } from "react-router-dom";
 import Search from "./components/search";
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
-import {GiKnifeFork} from 'react-icons/gi'
+import {GiForkKnifeSpoon} from 'react-icons/gi'
 
 function App() {
   return (
     <div>
       <BrowserRouter>
       <Nav>
-        <GiKnifeFork/>
+        <GiForkKnifeSpoon style={{fontSize: '20px',}}/>
         <Logo to={"/"}>Foodly</Logo>
       </Nav>
       <Search />

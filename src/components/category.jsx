@@ -39,7 +39,7 @@ display: flex;
 flex-direction: column;
 justify-content: center;
 align-items:center;
-border-radius: 50%;
+border-radius: 15%;
 margin-right: 2rem;
 text-decoration: none;
 background: linear-gradient(35deg, #494949, #313131);

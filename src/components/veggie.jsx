@@ -59,11 +59,12 @@ const Wrapper = styled.div`
 margin: 4rem 0rem;
 `
 const Card = styled.div`
-min-height: 12em;
+min-height: 11rem;
 border-radius: 2rem;
 overflow: hidden;
 position: relative;
-
+box-shadow: 2px 4px 8px 0px #363635;
+margin: 11px 0px;
 img {
 border-radius: 2rem;
 position: absolute;
@@ -71,7 +72,8 @@ left: 0
 width: 100%;
 height: auto;
 object-fit: cover;
-object-position: center,
+object-position: center;
+
 }
 p {
     position: absolute;
