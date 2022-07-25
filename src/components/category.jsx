@@ -1,51 +1,75 @@
-import React from 'react'
-import {FaPizzaSlice, FaHamburger} from 'react-icons/fa';
-import {GiNoodles, GiChopsticks, GiCoolSpices, GiMeat, GiSandwich, GiCakeSlice} from 'react-icons/gi';
+/* eslint-disable react/jsx-no-comment-textnodes */
+import React from 'react';
+import { FaPizzaSlice, FaHamburger } from 'react-icons/fa';
+import {
+	GiNoodles,
+	GiChopsticks,
+	GiCoolSpices,
+	GiMeat,
+	GiSandwich,
+	GiCakeSlice,
+} from 'react-icons/gi';
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
- 
 
 const Category = () => {
-  return (
-    <List>
-        <SLink to={'/cuisine/American'}>
-            <FaHamburger />
-            <h4>American</h4>
-        </SLink>
-        <SLink to={'/cuisine/Italian'}>
-            <FaPizzaSlice />
-            <h4>Italian</h4>
-        </SLink>
-        <SLink to={'/cuisine/European'}>
-            <GiSandwich />
-            <h4>European</h4>
-        </SLink>
-        <SLink to={'/cuisine/Indian'}>
-            <GiCoolSpices />
-            <h4>Indian</h4>
-        </SLink>
-        <SLink to={'/cuisine/African'}>
-            <GiMeat />
-            <h4>African</h4>
-        </SLink>
-        <SLink to={'/cuisine/British'}>
-            <GiCakeSlice />
-            <h4>British</h4>
-        </SLink>
-        <SLink to={'/cuisine/Thai'}>
-            <GiChopsticks />
-            <h4>Thai</h4>
-        </SLink >
-    </List>
-  )
-}
+	const data = [
+		{
+			path: '/cuisine/American',
+			icon: <FaHamburger />,
+			title: 'American',
+		},
+		{
+			path: '/cuisine/Italian',
+			icon: <FaPizzaSlice />,
+			title: 'Italian',
+		},
+		{
+			path: '/cuisine/Indian',
+			icon: <GiCoolSpices />,
+			title: 'Indian',
+		},
+		{
+			path: '/cuisine/European',
+			icon: <GiSandwich />,
+			title: 'European',
+		},
+		{
+			path: '/cuisine/African',
+			icon: <GiMeat />,
+			title: 'African',
+		},
+		{
+			path: '/cuisine/Thai',
+			icon: <GiChopsticks />,
+			title: 'Thai',
+		},
+	];
+
+	return (
+		<>
+			<List>
+				{data.map((item, index) => {
+					return (
+						<div key={index}>
+							<SLink to={item.path}>
+								{item.icon}
+								<h4>{item.title}</h4>
+							</SLink>
+						</div>
+					);
+				})}
+			</List>
+		</>
+	);
+};
 
 const List = styled.div`
-display: flex;
-justify-content: center;
-margin: 1rem 0rem;
-gap:2rem;
-`
+	display: flex;
+	justify-content: center;
+	margin: 1rem 0rem;
+	gap: 2rem;
+`;
 
 const SLink = styled(NavLink)`
 display: flex;
@@ -60,6 +84,7 @@ width: 6rem;
 height: 6rem;
 cursor: pointer;
 transform: scale(0.8);
+min-width: 6rem;
 
 h4 {
     color: white;
@@ -71,6 +96,6 @@ svg {
 }
 &.active{
     background-image: linear-gradient(-20deg, #fc6076 0%, #ff9a44 100%);
-`
+`;
 
-export default Category
+export default Category;
